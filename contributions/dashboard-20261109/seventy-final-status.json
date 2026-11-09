@@ -1,0 +1,1252 @@
+{
+  "schema_version": 1,
+  "scope": "Fixed 70 primary upstream pull requests; supplemental fixes, fork validation PRs, and delivery commits are excluded.",
+  "observed_from": "2026-11-09 16:11:09 UTC",
+  "observed_until": "2026-11-09 16:11:10 UTC",
+  "source": "GitHub REST pull request API",
+  "counts": {
+    "total": 70,
+    "merged": 22,
+    "open": 48,
+    "closed_unmerged": 0,
+    "mergeable_false": 1,
+    "mergeable_unknown": 30
+  },
+  "groups": [
+    {
+      "id": "craft_archives",
+      "repo": "storytold/craft-anything",
+      "numbers": [
+        1363,
+        1364,
+        1371,
+        1372,
+        1374,
+        1375,
+        1381,
+        1362,
+        1382,
+        1383
+      ],
+      "total": 10,
+      "merged": 3,
+      "open": 7,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "craft_native",
+      "repo": "storytold/craft-anything",
+      "numbers": [
+        1365,
+        1366,
+        1367,
+        1368,
+        1369,
+        1370,
+        1384,
+        1385,
+        1386,
+        1387
+      ],
+      "total": 10,
+      "merged": 9,
+      "open": 1,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "craft_other",
+      "repo": "storytold/craft-anything",
+      "numbers": [
+        1373,
+        1379,
+        1377,
+        1380,
+        1378,
+        1388,
+        1389,
+        1390,
+        1391,
+        1392
+      ],
+      "total": 10,
+      "merged": 10,
+      "open": 0,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "agent_browser",
+      "repo": "vercel-labs/agent-browser",
+      "numbers": [
+        2495,
+        2496,
+        2497,
+        2498,
+        2499,
+        2500,
+        2501,
+        2502,
+        2503,
+        2504
+      ],
+      "total": 10,
+      "merged": 0,
+      "open": 10,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "billion_context",
+      "repo": "ranxianglei/billion-context",
+      "numbers": [
+        6046,
+        6047,
+        6048,
+        6049,
+        6050,
+        6051,
+        6052,
+        6053,
+        6054,
+        6055
+      ],
+      "total": 10,
+      "merged": 0,
+      "open": 10,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "openmausbot",
+      "repo": "milind-soni/OpenMausBot",
+      "numbers": [
+        5083,
+        5084,
+        5085,
+        5086,
+        5087,
+        5088,
+        5089,
+        5090,
+        5091,
+        5092
+      ],
+      "total": 10,
+      "merged": 0,
+      "open": 10,
+      "closed_unmerged": 0
+    },
+    {
+      "id": "claude_mem",
+      "repo": "thedotmack/claude-mem",
+      "numbers": [
+        5579,
+        5580,
+        5581,
+        5582,
+        5583,
+        5585,
+        5586,
+        5587,
+        5588,
+        5589
+      ],
+      "total": 10,
+      "merged": 0,
+      "open": 10,
+      "closed_unmerged": 0
+    }
+  ],
+  "pull_requests": [
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1363,
+      "title": "Keep PyInstaller CArchive members inside the payload",
+      "head": {
+        "sha": "a574cde8b266b8a07f84b0ad70a809a08e8f4d95",
+        "ref": "bugfix/r3.12-carchive-payload-range-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T16:09:01Z",
+      "merge_commit_sha": "f19f304482af2753bc4f9c2eff03440e0a571a30",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1364,
+      "title": "Reject ASAR manifest nodes with invalid file metadata",
+      "head": {
+        "sha": "1613476ae0e8af07bf09e69f6454705047ec1e90",
+        "ref": "bugfix/r3.12-asar-node-shapes-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1371,
+      "title": "Validate gzip header checksums without rejecting informational fields",
+      "head": {
+        "sha": "7f58bf1574fae2edfd2fa71de2176639cb9562e1",
+        "ref": "bugfix/r3.12-gzip-header-crc-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T16:09:07Z",
+      "merge_commit_sha": "a1c93f15b79d8679a5ea9c06a9afff6c6fae356a",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1372,
+      "title": "Read complete gzip packed members and verify their trailers",
+      "head": {
+        "sha": "aadb52ee71b387e58d0d090bded25d8f6b6fea8d",
+        "ref": "bugfix/r3.12-packed-gzip-integrity-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "959ae667bac7e725b7cdc1676045ff055bcc5b7c",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1374,
+      "title": "Extract ZIP entries compressed with bzip2 or XZ",
+      "head": {
+        "sha": "2ca31fb11dc780e9a96d9fa12beadf2e80ad4e53",
+        "ref": "feature/r3.12-zip-bzip2-xz-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "7dfcccd2f5ff737ea6cd45aa30c1f75014a1ab4a",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1375,
+      "title": "Extract ZIP LZMA members with checked framing and output limits",
+      "head": {
+        "sha": "a298987d966e4e58f84afd6ed81d46d88dd4ec69",
+        "ref": "feature/r3.12-zip-lzma-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "b55db0818accc867cb8f52103460e0740e0478d5",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1381,
+      "title": "Enforce standalone LZMA budgets before large dictionary growth",
+      "head": {
+        "sha": "f57923ea32733aa2d4e383bb44dd4b3892b9dfe5",
+        "ref": "bugfix/r3.12-standalone-lzma-budget-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "c44047d1d8f9a720b1c5decda8b3387b0f074b06",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1362,
+      "title": "Preserve GNU tar member identities at the long-name limit",
+      "head": {
+        "sha": "ffe055c297b98df5ac7c329f74d0bd86807a83bd",
+        "ref": "bugfix/r3.12-tar-long-identities-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:26:55Z",
+      "merge_commit_sha": "87d9ec0e5fbdb3f22e7d707a909ef750348238a5",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1382,
+      "title": "Keep GNU sparse tar payloads out of regular-file extraction",
+      "head": {
+        "sha": "576b1d0bc3b9ac26b00bfa748de20ca7b44bb702",
+        "ref": "bugfix/r3.12-tar-pax-sparse-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "mergeable": false
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1383,
+      "title": "Decode concatenated XZ streams and standard stream padding",
+      "head": {
+        "sha": "f25796a28ead5c1f0b5233778a5578a8bd944684",
+        "ref": "feature/r3.12-xz-concatenation-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "588b1f2e7ccbce614f534a52199e4a39bac1e1a4",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1365,
+      "title": "Keep same-named imports attached to their own library slots (R3.12)",
+      "head": {
+        "sha": "b450b193912c0d0766abab7c339ac5c5f8bec44a",
+        "ref": "bugfix/r3.12-import-library-slots-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:34:47Z",
+      "merge_commit_sha": "78af11ce4dc62cbc0430d4f725c5caebb93e3fb0",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1366,
+      "title": "Advance ELF core mapping paths by their original bytes (R3.12)",
+      "head": {
+        "sha": "b9836f65b9e2c74d76921ca8d4f5dfaa27ac91d1",
+        "ref": "bugfix/r3.12-elf-core-path-cursor-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:34:54Z",
+      "merge_commit_sha": "7779fc244928f0f695ecdeb55df0b1e19bbf331e",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1367,
+      "title": "Recover dynamic symbols when retained ELF sections omit the symbol table (R3.12)",
+      "head": {
+        "sha": "72461eb1a8f3dfea12884e8ef60b96e8cfb654f2",
+        "ref": "bugfix/r3.12-elf-partial-section-symbols-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:35:01Z",
+      "merge_commit_sha": "a5ea19cf10ef6d04d209f1a372e1a1c3a3bc93eb",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1368,
+      "title": "Keep ELF symbol versions inside their declared sections (R3.12)",
+      "head": {
+        "sha": "31b8c716149aa27ad0517042f747dde0bf8c4238",
+        "ref": "bugfix/r3.12-elf-version-section-bounds-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:31:14Z",
+      "merge_commit_sha": "0cb327f9c9059f5cde451a95be7810773087f5c0",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1369,
+      "title": "Keep PE import descriptors inside their declared directories (R3.12)",
+      "head": {
+        "sha": "3e9d922a7b36d9c092a2850923281f8cb08d4eb0",
+        "ref": "bugfix/r3.12-pe-import-directory-bounds-20261109"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "2918a8c1a5e457fcdbdedd0b933f878f2cda3ad0",
+      "mergeable": true
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1370,
+      "title": "Reject PE virtual addresses that wrap past the address space (R3.12)",
+      "head": {
+        "sha": "a6d9662a67a7030b997be20f68c2209997f48ad2",
+        "ref": "bugfix/r3.12-pe-virtual-address-overflow-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:31:21Z",
+      "merge_commit_sha": "5b1bf92ba35846958a28638f44d2fc83ad8032d8",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1384,
+      "title": "Apply PE export limits to aliases and empty function slots (R3.12)",
+      "head": {
+        "sha": "c71cc845e5deb38a35eba8e687a4cbff102ebf91",
+        "ref": "bugfix/r3.12-pe-export-work-budget-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:41:30Z",
+      "merge_commit_sha": "25f4db213ec721b0687602b18ed0506609050ad0",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1385,
+      "title": "Read Mach-O thread entry points from the matching complete CPU state (R3.12)",
+      "head": {
+        "sha": "cb1f5189983f9d7b933157a5fcc6201a711fe99e",
+        "ref": "bugfix/r3.12-macho-thread-state-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:41:36Z",
+      "merge_commit_sha": "fbdc3049dbc5cb5c436bd12b3b38d19b1228a90f",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1386,
+      "title": "Bound Mach-O indirect import slots across all sections (R3.12)",
+      "head": {
+        "sha": "ef532d520f0fbcfc2313434dbd06e997860d48ea",
+        "ref": "bugfix/r3.12-macho-indirect-global-budget-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:41:43Z",
+      "merge_commit_sha": "efddbdeb6868f10a3d8d53f114d47aed72b89612",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1387,
+      "title": "Reject Objective-C method records shorter than their declared layout (R3.12)",
+      "head": {
+        "sha": "ca995c780a255ded81ba7ffc72680839d47c302c",
+        "ref": "bugfix/r3.12-objc-method-record-stride-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T16:05:43Z",
+      "merge_commit_sha": "f7b985cd3f6eaddca030aa7a4124024edffef99a",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1373,
+      "title": "Reject Java constants that exceed the constant-pool slots (R3.12)",
+      "head": {
+        "sha": "8a5332a89480f1f354f404860afe5433a07cd87a",
+        "ref": "bugfix/r3.12-java-wide-pool-slot-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:54:36Z",
+      "merge_commit_sha": "1c4f233f08caf2c54391d611d2f5781229d89ee6",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1379,
+      "title": "Keep embedded Godot pack reads before the trailer (R3.12)",
+      "head": {
+        "sha": "ae10e66be638852663f6191d767c2705db6de5b3",
+        "ref": "bugfix/r3.12-godot-trailer-boundary-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:55:43Z",
+      "merge_commit_sha": "4824e31d5f9fb8864eff32d468cd58a5eef91eaa",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1377,
+      "title": "Bound retained metadata when listing Node SEA programs (R3.12)",
+      "head": {
+        "sha": "a91f5e8afecf0e88a23d7dc906a7aaf863e88666",
+        "ref": "bugfix/r3.12-node-sea-retained-budget-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:34:27Z",
+      "merge_commit_sha": "ee73141313d66905e6e715e70f592b1f00fbc8ed",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1380,
+      "title": "Respect the UTF-8 output budget for IL2CPP literals (R3.12)",
+      "head": {
+        "sha": "43279b281e6c3dbe7592896d2bfa39f9c2261fcc",
+        "ref": "bugfix/r3.12-il2cpp-literal-byte-budget-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:40:03Z",
+      "merge_commit_sha": "131cac4f56dfe07700100388b4360f37b29bd841",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1378,
+      "title": "Decode Unity R16 and RG16 textures (R3.9)",
+      "head": {
+        "sha": "ab2f5b83f33ae9a309bb7265055314e70ed84208",
+        "ref": "feature/r3.9-unity-integer-textures-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:34:33Z",
+      "merge_commit_sha": "2474de39fe3f5e503433beba39f61e70bd018bf5",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1388,
+      "title": "Preserve DEX boundaries when member or handler lists are capped (R3.12)",
+      "head": {
+        "sha": "eeab41fd938c2f26d599a4ba9682f8525b8ee67b",
+        "ref": "bugfix/r3.12-dex-capped-table-alignment-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:51:29Z",
+      "merge_commit_sha": "34d9450b75f402217a7243c04d6c5ed3d2d3f8d4",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1389,
+      "title": "Keep Android resource children inside their parent chunks (R3.12)",
+      "head": {
+        "sha": "5eb384a87f453156e37025f878ddfb427d6ceaa2",
+        "ref": "bugfix/r3.12-arsc-parent-chunk-boundaries-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:51:35Z",
+      "merge_commit_sha": "98c8a0ceaec575dc8306096c43d7edcafab5af87",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1390,
+      "title": "Bound WebAssembly metadata across repeated custom sections (R3.12)",
+      "head": {
+        "sha": "aa825077c910288caabcc5276de68ab86b778485",
+        "ref": "bugfix/r3.12-wasm-custom-inventory-budget-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:51:42Z",
+      "merge_commit_sha": "37ec5557f07eff39050b0bd448a4a52d155d130e",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1391,
+      "title": "Validate Unity serialized metadata ranges before reading (R3.12)",
+      "head": {
+        "sha": "27af3aedf6478a1d902b2b14c298b1c037759cad",
+        "ref": "bugfix/r3.12-unity-metadata-range-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:51:49Z",
+      "merge_commit_sha": "9d7217e437e8eb5963d467854fd539b008c549e9",
+      "mergeable": null
+    },
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1392,
+      "title": "Decode Unreal floating-point texture formats (R3.9)",
+      "head": {
+        "sha": "4977803bebe940990854ad87ae1d8144e592cf0f",
+        "ref": "feature/r3.9-unreal-float-textures-20261109"
+      },
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-11-09T15:51:56Z",
+      "merge_commit_sha": "7073462fcca6088989f9127f3473b95471a758b1",
+      "mergeable": null
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2495,
+      "title": "Keep cleared dashboard logs empty when new events arrive",
+      "head": {
+        "sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+        "ref": "fix/dashboard-cleared-stream-logs"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "a2a56747ed0d09c3521a887dd6173e56fcb28a3e",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2496,
+      "title": "Reload dashboard activity when a session reconnects on a new port",
+      "head": {
+        "sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+        "ref": "fix/dashboard-activity-session-history"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "3eb684b865514149e45098a2d9ed005597ed0ee5",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2497,
+      "title": "Report malformed dashboard command responses as errors",
+      "head": {
+        "sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+        "ref": "fix/dashboard-command-response-errors"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "3189e5003fc12cbf3a1ea285e4b3d30f0cc60613",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2498,
+      "title": "Read dashboard storage values from command response envelopes",
+      "head": {
+        "sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+        "ref": "fix/dashboard-storage-response-data"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "4eb0cb34865162bfc2a81c35f94967c2e00d4b32",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2499,
+      "title": "Keep stale storage requests from replacing the active session data",
+      "head": {
+        "sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+        "ref": "fix/dashboard-storage-request-lifecycle"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "d6b04b87515aa53d633cdc0c465d2367c0043715",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2500,
+      "title": "Allow retrying dashboard session closes after a failure",
+      "head": {
+        "sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+        "ref": "fix/dashboard-session-close-recovery"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "593a05c4a89b4b6e63bacbb3d3689d87499bf020",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2501,
+      "title": "Keep dashboard network responses attached to their selected request",
+      "head": {
+        "sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+        "ref": "fix/dashboard-network-request-scope"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "62c02401b02341520c12e35b9c6446ee1cb24afd",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2502,
+      "title": "Stop overlapping dashboard session polls and cancel them on cleanup",
+      "head": {
+        "sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+        "ref": "fix/dashboard-session-poll-lifecycle"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "a9437440777cd8158411b8068e83895a52127f08",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2503,
+      "title": "Discard stale dashboard frames and release decoded image bitmaps",
+      "head": {
+        "sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+        "ref": "fix/dashboard-frame-decode-lifecycle"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "7acd32215f7621c3ef0c26f3373a03684ba134ab",
+      "mergeable": true
+    },
+    {
+      "repo": "vercel-labs/agent-browser",
+      "number": 2504,
+      "title": "Keep the dashboard usable when browser storage is unavailable",
+      "head": {
+        "sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+        "ref": "fix/dashboard-unavailable-browser-storage"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "c5fd5d762124956de2156d525e2b99cb00cf5287",
+      "mergeable": true
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6046,
+      "title": "[PR] fix: prevent SimHash feature vote overflow",
+      "head": {
+        "sha": "c26c68a93fb11035a0e02cd08b171a295abbddb4",
+        "ref": "2026-11-09_fix-simhash-vote-overflow"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "10a24b8642f5ccc0d7f05bd57b8c8e9f168fe73c",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6047,
+      "title": "[PR] fix: reject corrupt positional affinity snapshot carriers",
+      "head": {
+        "sha": "caf14bb702346eae823ede9b46d501952b3cca4d",
+        "ref": "2026-11-09_fix-affinity-snapshot-position"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "de8803120bddb96b0d3258c19d7615b36fd3f0d7",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6048,
+      "title": "[PR] fix: account for deeply nested media without recursive stack growth",
+      "head": {
+        "sha": "01e42ad79402ea62220e7ac60c2d54075da8c4ef",
+        "ref": "2026-11-09_fix-media-walk-depth"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "2a1696a359a426a296aaec798e59f17fe643411f",
+      "mergeable": true
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6049,
+      "title": "[PR] fix: preserve busy liveness when health response bodies time out",
+      "head": {
+        "sha": "76189b11ef297ab1244c268f20813ebb3d839fb7",
+        "ref": "2026-11-09_fix-health-body-timeout"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "ef536f2052d7acd3e14e09f5fd362eeeefaee0c5",
+      "mergeable": true
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6050,
+      "title": "[PR] fix: retain failed dump deletions in GC byte accounting",
+      "head": {
+        "sha": "1b43b991f3673d1acb552278088701e0e831e69c",
+        "ref": "2026-11-09_fix-dump-gc-accounting"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "0a9b12cc6b5d1b2944e42103593250fb562d02d9",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6051,
+      "title": "[PR] fix: cancel idle raw upstream reads on client disconnect",
+      "head": {
+        "sha": "312e4218329869d6d27b4f330926038ae61c485f",
+        "ref": "2026-11-09_fix-idle-stream-disconnect"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "40957d7034f907707049a08fa19c82aa5c2995ff",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6052,
+      "title": "[PR] fix: honor backpressure and completion when dumping SSE streams",
+      "head": {
+        "sha": "105b84dd95c73eccb3eab83a2c199e0c1413b1f4",
+        "ref": "2026-11-09_fix-sse-dump-backpressure"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "5e0738d970506c6935ed83cf9e7ba640887d7e6f",
+      "mergeable": true
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6053,
+      "title": "[PR] fix: reject invalid attach timestamps before scheduling alarms",
+      "head": {
+        "sha": "55db71ddf8bab6c063b146c90f58ada35213414a",
+        "ref": "2026-11-09_fix-attach-invalid-timestamps"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "5deb72d7bb71bde5fa20f49cbb660821ef820940",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6054,
+      "title": "[PR] fix: evict watermark sessions incrementally at cache capacity",
+      "head": {
+        "sha": "168e8ca1cd76dd980ba485251412d06aba919156",
+        "ref": "2026-11-09_fix-watermark-cache-eviction"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "95e0670fbb92f9b8d4dc040647a79a18fc03a68f",
+      "mergeable": null
+    },
+    {
+      "repo": "ranxianglei/billion-context",
+      "number": 6055,
+      "title": "[PR] fix: tolerate JSON null content during storage identity backfill",
+      "head": {
+        "sha": "6b0cb61a6ce69241faff00164e9195c85bb4e9fc",
+        "ref": "2026-11-09_fix-storage-null-identity"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "ce45dad84eec31b56098a5ab7f6852e3de7c05ac",
+      "mergeable": null
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5083,
+      "title": "fix: release retry backoff timers and abort listeners",
+      "head": {
+        "sha": "ba3c2b7c65b1f6d1a10d4a56aa173a4a94e685f7",
+        "ref": "fix/retry-delay-cleanup"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "ba56fe4931985b402c4a490460d1ed534427bed7",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5084,
+      "title": "fix: preserve automation failure history during active runs",
+      "head": {
+        "sha": "1872e9fa09e81ec84946b7507df585a27a89a9fa",
+        "ref": "fix/automation-history-active-runs"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "1875628a2d92464ea69b822c15757c2522ee1b53",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5085,
+      "title": "fix: preserve unsafe connector numeric arguments",
+      "head": {
+        "sha": "a05ee1605344ddd79ef35fd52637864040d2ec86",
+        "ref": "fix/connector-numeric-coercion"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "19add22227df087d43efe17cab8f63a1877fc671",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5086,
+      "title": "fix: preserve MCP SSE framing across split CRLF bytes",
+      "head": {
+        "sha": "930ff7d757a0337765c702ce5282d26b0d9aac6b",
+        "ref": "fix/mcp-sse-crlf-framing"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "0c73b37c8dd33772642a3ba33bd1d884ac66b9e0",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5087,
+      "title": "fix: reject incomplete Base32 groups in TOTP keys",
+      "head": {
+        "sha": "a468ff2b308da30af96143b09880fed69a003de9",
+        "ref": "fix/totp-base32-validation"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "ec0cfbc68c785e40d94caadaf0a7ce92628dd604",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5088,
+      "title": "fix: detect MCP name collisions from parsed Codex config",
+      "head": {
+        "sha": "6fe4366c0b17651bed6c87e42f0c6e99cd5b2ba8",
+        "ref": "fix/codex-inline-mcp-collisions"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "f57b9123701dfe3fb0b50774390cf5e7a537b6b2",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5089,
+      "title": "fix: retain budget exhaustion events in the thread inspector",
+      "head": {
+        "sha": "a331e14a18803a876ca60149286bff88e58c197a",
+        "ref": "fix/inspector-cap-events"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "21df44a602e004de93f33127b51b37784206ac5b",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5090,
+      "title": "fix: split unspaced speech at Unicode word boundaries",
+      "head": {
+        "sha": "b820dff83ae58238d90f68c54319400187661a75",
+        "ref": "fix/tts-unspaced-chunk-limits"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "fefa379c388e7774cd03eb9756abe73bef13aafe",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5091,
+      "title": "fix: reject rolled-over dates in extraction responses",
+      "head": {
+        "sha": "ffd027c9660d31fd35c7df95b01363e02ddd1cd0",
+        "ref": "fix/extractor-calendar-dates"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "7b72326526332783e7f683095be267bda399195e",
+      "mergeable": true
+    },
+    {
+      "repo": "milind-soni/OpenMausBot",
+      "number": 5092,
+      "title": "fix: correlate connector replies before caching tool lists",
+      "head": {
+        "sha": "13faee0bf135b35db9ce81850ec8a469d03462f1",
+        "ref": "fix/connector-response-correlation"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "d2920bd42a1344c15f0f8de603e9d19cdfa60dab",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5579,
+      "title": "fix(work-view): handle deeply nested publishing results",
+      "head": {
+        "sha": "d774c438b947277592633c16efc0f9ba3329a0df",
+        "ref": "fix/work-product-deep-results"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "596995b53fd4a1205324223713fedb6b293696cc",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5580,
+      "title": "fix(work-view): order lists by original activity time",
+      "head": {
+        "sha": "8a266a7508048a6521db61510c69a7a4ce28bc81",
+        "ref": "fix/work-list-activity-order"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "c4645a2ec61368059f61f7ca94794ac9e5591739",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5581,
+      "title": "fix(rules): preserve empty evidence in saved rules",
+      "head": {
+        "sha": "52477ad17ac0ce7f2c4a4d88707999fd05502e56",
+        "ref": "fix/rule-empty-evidence"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "e506b0cb49a593b28d6f863ae5cbd57f736a28e1",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5582,
+      "title": "fix(work-view): use isolated atomic writes for ledger snapshots",
+      "head": {
+        "sha": "8847f7c155b8fedcd6d665985d380ba651f4a662",
+        "ref": "fix/ledger-atomic-writes"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "ee3e0afbd5d874defa65c616f88cd11f37727070",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5583,
+      "title": "fix(search): keep multiline titles inside a single table row",
+      "head": {
+        "sha": "c292f570e44369f1bd9e1053da849aa86e1f545e",
+        "ref": "fix/search-table-line-breaks"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "8276d861c70cf5222a9fc26ebdd44b9362091d1e",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5585,
+      "title": "fix(work-view): skip invalid observation file entries before naming products",
+      "head": {
+        "sha": "d1d07672f4138042ab0cfe7a545ac723de81adeb",
+        "ref": "fix/observation-product-file-types"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "05637063424c372f4c1a1b2acdc3d856dbdba81e",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5586,
+      "title": "perf(search): avoid repeated linear scans when ranking file histories",
+      "head": {
+        "sha": "75902142fb57061283c7528fbccd48cebb5ad448",
+        "ref": "perf/hybrid-file-ranking-cost"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "698ce1cb47716d4067638e2c690183660a530898",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5587,
+      "title": "fix(work-view): remove stale group evidence when conversations move",
+      "head": {
+        "sha": "e9ff83dc2bcfd2b3b87ac4988a993b19e04eea79",
+        "ref": "fix/request-group-stale-links"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "39fcc4f901a5a9050161e268545f27f606cafee0",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5588,
+      "title": "fix(work-view): batch candidate history queries below SQLite limits",
+      "head": {
+        "sha": "d9f9eb9102b64e4e13e9b2a5c8fd0c54b1b89ee4",
+        "ref": "fix/request-candidate-query-batches"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "28889bd72f293f3bc73013b386bfc9dd12f6d9d2",
+      "mergeable": true
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "number": 5589,
+      "title": "fix(work-view): replay owner goals in event order",
+      "head": {
+        "sha": "7a8af27c46224b6fd2dbe9a307e0f8d3562c8526",
+        "ref": "fix/owner-goals-event-order"
+      },
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": "899c0665a4054adb68584466305f67a50539a6bf",
+      "mergeable": true
+    }
+  ],
+  "head_comparison": {
+    "baseline_report": "https://github.com/Afloat16/claude-mem/blob/submission-materials/seventy-improvements-20261109/contributions/2026-11-09/manifest.json",
+    "baseline_observed_at": "2026-11-09 15:39:11 UTC",
+    "compared": 70,
+    "changed": 15,
+    "changes": [
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1363,
+        "previous_head": "aa1a1c6f40b053d5c345aa84ef94395d4587a034",
+        "current_head": "a574cde8b266b8a07f84b0ad70a809a08e8f4d95"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1364,
+        "previous_head": "b09a93a40ec1cdb37f32f6c52760855ce73d31bd",
+        "current_head": "1613476ae0e8af07bf09e69f6454705047ec1e90"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1371,
+        "previous_head": "839304aa2892c5d8db92a2191dc31e47be6ea6c1",
+        "current_head": "7f58bf1574fae2edfd2fa71de2176639cb9562e1"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1372,
+        "previous_head": "c7018010cf98d4e69223645d4dbfbfeb7461f6b8",
+        "current_head": "aadb52ee71b387e58d0d090bded25d8f6b6fea8d"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1374,
+        "previous_head": "2c069f4b042ead31ec9a78c726bad5f67228271b",
+        "current_head": "2ca31fb11dc780e9a96d9fa12beadf2e80ad4e53"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1375,
+        "previous_head": "9a812d00d14a24fcf3db106a3df4138c4bf1b26f",
+        "current_head": "a298987d966e4e58f84afd6ed81d46d88dd4ec69"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1381,
+        "previous_head": "89f119772b205bf63dc99fae7744cccbaafc6c09",
+        "current_head": "f57923ea32733aa2d4e383bb44dd4b3892b9dfe5"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1382,
+        "previous_head": "764269976093b101de197c9c5b2bf2a1f4418109",
+        "current_head": "576b1d0bc3b9ac26b00bfa748de20ca7b44bb702"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1383,
+        "previous_head": "a7ae344995a3b2b7c4c36a8f57d3569182cdebcf",
+        "current_head": "f25796a28ead5c1f0b5233778a5578a8bd944684"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1369,
+        "previous_head": "9295c9716118277527e820dba29d2a7965d84047",
+        "current_head": "3e9d922a7b36d9c092a2850923281f8cb08d4eb0"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1387,
+        "previous_head": "21de8ca8ae05d47a92a49ca6428d02317673a30d",
+        "current_head": "ca995c780a255ded81ba7ffc72680839d47c302c"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1373,
+        "previous_head": "f358146ebeaa5856e32178308c24a8e9283e84b2",
+        "current_head": "8a5332a89480f1f354f404860afe5433a07cd87a"
+      },
+      {
+        "repo": "storytold/craft-anything",
+        "number": 1379,
+        "previous_head": "b16acf47009b0f33f52a54600af5f3671c960fbf",
+        "current_head": "ae10e66be638852663f6191d767c2705db6de5b3"
+      },
+      {
+        "repo": "ranxianglei/billion-context",
+        "number": 6053,
+        "previous_head": "435d2d3e5b6670b58dca336793ac97361a6e2e02",
+        "current_head": "55db71ddf8bab6c063b146c90f58ada35213414a"
+      },
+      {
+        "repo": "milind-soni/OpenMausBot",
+        "number": 5088,
+        "previous_head": "a0277e17ec943ef064f4949335a26ceb1aaae3f2",
+        "current_head": "6fe4366c0b17651bed6c87e42f0c6e99cd5b2ba8"
+      }
+    ]
+  },
+  "mergeability_false": [
+    {
+      "repo": "storytold/craft-anything",
+      "number": 1382,
+      "head": {
+        "sha": "576b1d0bc3b9ac26b00bfa748de20ca7b44bb702",
+        "ref": "bugfix/r3.12-tar-pax-sparse-20261109"
+      },
+      "url": "https://github.com/storytold/craft-anything/pull/1382"
+    }
+  ],
+  "notes": [
+    "Null mergeable values are recorded as returned by GitHub, including merged pull requests.",
+    "This audit reads pull-request metadata only and does not rerun checks or modify source branches."
+  ]
+}
