@@ -2,9 +2,8 @@
   "repository": "vercel-labs/agent-browser",
   "fork": "Afloat16/agent-browser",
   "base": "4b0e9f01fa8d214d39bbfe5391257640634fb9a0",
-  "upstream_pull_requests_created": 0,
+  "upstream_pull_requests_created": 10,
   "merged": 0,
-  "upstream_creation_error": "GitHub integration returned 403: Resource not accessible by integration.",
   "fork_validation_pull_request": "https://github.com/Afloat16/agent-browser/pull/1",
   "fork_validation_status": "The original agent-browser fork validation PR did not start Actions. All ten exact source commits passed isolated remote dashboard jobs in Afloat16/claude-mem.",
   "items": [
@@ -30,6 +29,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2495,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2495",
+        "state": "open",
+        "merged": false,
+        "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+        "draft": false
       }
     },
     {
@@ -54,6 +61,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2496,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2496",
+        "state": "open",
+        "merged": false,
+        "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+        "draft": false
       }
     },
     {
@@ -77,6 +92,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2497,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2497",
+        "state": "open",
+        "merged": false,
+        "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+        "draft": false
       }
     },
     {
@@ -101,6 +124,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2498,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2498",
+        "state": "open",
+        "merged": false,
+        "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+        "draft": false
       }
     },
     {
@@ -125,6 +156,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2499,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2499",
+        "state": "open",
+        "merged": false,
+        "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+        "draft": false
       }
     },
     {
@@ -149,6 +188,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2500,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2500",
+        "state": "open",
+        "merged": false,
+        "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+        "draft": false
       }
     },
     {
@@ -174,6 +221,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2501,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2501",
+        "state": "open",
+        "merged": false,
+        "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+        "draft": false
       }
     },
     {
@@ -198,6 +253,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2502,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2502",
+        "state": "open",
+        "merged": false,
+        "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+        "draft": false
       }
     },
     {
@@ -222,6 +285,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2503,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2503",
+        "state": "open",
+        "merged": false,
+        "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+        "draft": false
       }
     },
     {
@@ -246,6 +317,14 @@
         "node": "24",
         "pnpm": "11.1.3",
         "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
+      },
+      "upstream_pull_request": {
+        "number": 2504,
+        "url": "https://github.com/vercel-labs/agent-browser/pull/2504",
+        "state": "open",
+        "merged": false,
+        "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+        "draft": false
       }
     }
   ],
@@ -261,5 +340,7 @@
       "pnpm --filter dashboard build"
     ],
     "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
-  }
+  },
+  "open_upstream_pull_requests": 10,
+  "upstream_publication_status": "Ten upstream pull requests created; exact heads verified against successful independent validation."
 }
