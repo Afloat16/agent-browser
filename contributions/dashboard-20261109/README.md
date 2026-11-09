@@ -25,6 +25,14 @@ Each linked Dashboard job checked out its listed source SHA, used Node 24 and pn
 
 The runner repository is Afloat16/claude-mem; the code under test is Afloat16/agent-browser. These actual remote results verify the published revisions. Earlier locally tested revisions are different commits and are not used to certify these source SHAs. The fork validation PR and material commits are excluded from the contribution count.
 
+## Current upstream checks
+
+At 2026-11-09 15:59:44 UTC, all ten upstream PRs remain open with no merge conflicts. Each current source head has four successful check runs: Socket Security: Pull Request Alerts, Socket Security: Project Report, Vercel Agent Review, and Vercel Internal Security Review.
+
+Each head also has two deployment statuses reported as `failure`: `Vercel – agent-browser` and `Vercel – agent-browser-env-demo`. Their links request deployment authorization, and the Vercel bot states that a Vercel Labs team member must approve the external contributor's deployment. See the [authorization notice on PR #2495](https://github.com/vercel-labs/agent-browser/pull/2495#issuecomment-6743085253); each item's corresponding notice and exact check results are recorded in the manifest. The current upstream check list contains security and review checks. The independent regression and production-build evidence is recorded above.
+
+There are no review submissions, inline review threads, or unresolved threads on these ten PRs. Each PR has one ordinary comment, all from the Vercel bot about deployment authorization. The inspected discussions contain no source-change requests.
+
 ## History review
 
 The changes were selected after reviewing dashboard pull-request history and related upstream implementations. The submitted user account had no earlier agent-browser PRs in the inspected history before this batch. A websocket reconnection change matching upstream #2466 was excluded; the ten branches here are independent changes.

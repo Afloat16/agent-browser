@@ -36,7 +36,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129234778939"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129234653718"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129234651615"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2d403028f8920a0741e9ac1d94ec7418397dd8b1",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129234632402"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2495#issuecomment-6743085253"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2495#issuecomment-6743085253",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -68,7 +132,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235337951"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235231689"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235222632"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "e0a74e9ac54bd077a387fd5f6c570cfdd911e0e9",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235202306"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2496#issuecomment-6743107959"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2496#issuecomment-6743107959",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -99,7 +227,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235366905"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235287127"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235272674"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "d589a746d3a13dcbde7ccdd674142420aae2ddfb",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235269495"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2497#issuecomment-6743110340"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2497#issuecomment-6743110340",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -131,7 +323,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235429402"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235342876"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235330343"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "0115545b95a42e17fb7bac58a7496a87bc824ee3",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235323970"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2498#issuecomment-6743112461"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2498#issuecomment-6743112461",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -163,7 +419,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235882179"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235779486"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235775384"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "43755a8b66ddec401173d165d37961ae5be4caff",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235765361"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2499#issuecomment-6743129651"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2499#issuecomment-6743129651",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -195,7 +515,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235964998"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235859511"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235848467"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "f461d0272cc03143ca9e7d6391560655c5a5ec65",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235836288"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2500#issuecomment-6743132459"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2500#issuecomment-6743132459",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -228,7 +612,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236000814"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235909053"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235901541"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "85b68ac577d7021ec8fc9dc66ed9d0737f79628f",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129235888122"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2501#issuecomment-6743134646"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2501#issuecomment-6743134646",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -260,7 +708,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236187948"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236076394"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236061898"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "77619057055cf737668aa30fff5f9cdd234a986e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236061104"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2502#issuecomment-6743141258"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2502#issuecomment-6743141258",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -292,7 +804,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236265347"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236151514"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236146937"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "2ce4c7a79059a2a4f9818e2bf90b1da510d8ee8a",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236132034"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2503#issuecomment-6743144328"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2503#issuecomment-6743144328",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     },
     {
@@ -324,7 +900,71 @@
         "state": "open",
         "merged": false,
         "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
-        "draft": false
+        "draft": false,
+        "mergeable": true,
+        "mergeable_state": "blocked",
+        "verified_at": "2026-11-09 15:59:44 UTC"
+      },
+      "upstream_audit": {
+        "verified_at": "2026-11-09 15:59:44 UTC",
+        "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+        "check_runs": [
+          {
+            "name": "Socket Security: Pull Request Alerts",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236413726"
+          },
+          {
+            "name": "Vercel Agent Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236305584"
+          },
+          {
+            "name": "Socket Security: Project Report",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236296832"
+          },
+          {
+            "name": "Vercel Internal Security Review",
+            "status": "completed",
+            "conclusion": "success",
+            "head_sha": "dd636c104ad23269f7ec4b1121c84e865e0edc5e",
+            "url": "https://github.com/vercel-labs/agent-browser/runs/129236288444"
+          }
+        ],
+        "commit_statuses": [
+          {
+            "context": "Vercel – agent-browser",
+            "state": "failure",
+            "authorization_required": true
+          },
+          {
+            "context": "Vercel – agent-browser-env-demo",
+            "state": "failure",
+            "authorization_required": true
+          }
+        ],
+        "deployment_authorization": {
+          "status": "requires_vercel_labs_team_member",
+          "notice_url": "https://github.com/vercel-labs/agent-browser/pull/2504#issuecomment-6743150328"
+        },
+        "reviews": 0,
+        "review_threads": 0,
+        "unresolved_review_threads": 0,
+        "ordinary_comments": [
+          {
+            "author": "vercel[bot]",
+            "url": "https://github.com/vercel-labs/agent-browser/pull/2504#issuecomment-6743150328",
+            "kind": "deployment_authorization_notice"
+          }
+        ],
+        "actionable_source_feedback": []
       }
     }
   ],
@@ -342,5 +982,34 @@
     "scope": "Committed dashboard regressions and Next.js production build at each exact source SHA"
   },
   "open_upstream_pull_requests": 10,
-  "upstream_publication_status": "Ten upstream pull requests created; exact heads verified against successful independent validation."
+  "upstream_publication_status": "Ten upstream pull requests created; exact heads verified against successful independent validation.",
+  "upstream_audit": {
+    "verified_at": "2026-11-09 15:59:44 UTC",
+    "open": 10,
+    "merged": 0,
+    "conflict_free": 10,
+    "successful_check_runs": 40,
+    "successful_check_runs_per_head": 4,
+    "deployment_statuses_reporting_failure": 20,
+    "deployment_statuses_per_head": 2,
+    "deployment_status_reason": "Vercel Labs team authorization is required for the external contributor deployments.",
+    "deployment_status_contexts": [
+      "Vercel – agent-browser",
+      "Vercel – agent-browser-env-demo"
+    ],
+    "successful_check_names": [
+      "Socket Security: Pull Request Alerts",
+      "Socket Security: Project Report",
+      "Vercel Agent Review",
+      "Vercel Internal Security Review"
+    ],
+    "review_submissions": 0,
+    "review_threads": 0,
+    "unresolved_review_threads": 0,
+    "ordinary_comments": 10,
+    "ordinary_comment_type": "Vercel deployment authorization notices",
+    "actionable_source_feedback": 0,
+    "scope": "Current upstream head checks and discussion state; independent regression and production-build evidence remains in remote_validation and each item's validation."
+  },
+  "updated_at": "2026-11-09 15:59:44 UTC"
 }
