@@ -108,6 +108,8 @@ agent-browser --session "$SESSION" session info --json
 
 Use `state save`, `state load`, and `--state <path>` when you need an explicit portable JSON file. Do not make agents construct paths under `~/.agent-browser/sessions/`; prefer `--restore` for reusable agent sessions.
 
+Saved cookies retain their partition keys, including the top-level site and cross-site ancestry. This keeps a partitioned third-party cookie associated with its original site when state is restored. Cookies with opaque partition keys cannot be persisted; saving or loading them returns an error before any cookies are restored.
+
 ## Common Patterns
 
 ### Authenticated Session Reuse

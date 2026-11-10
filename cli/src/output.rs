@@ -3639,6 +3639,10 @@ State Encryption:
   Set AGENT_BROWSER_ENCRYPTION_KEY (64-char hex) for AES-256-GCM encryption.
   Generate a key: openssl rand -hex 32
 
+Partitioned Cookies:
+  State save/load preserve each cookie's top-level site and cross-site ancestry.
+  Cookies with opaque partition keys cannot be persisted.
+
 Global Options:
   --json               Output as JSON
   --session <name>     Session name: Unicode letters/numbers, hyphens, and underscores only

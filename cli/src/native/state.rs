@@ -254,6 +254,7 @@ pub async fn save_state(
     visited_origins: &HashSet<String>,
 ) -> Result<String, String> {
     let cookies = cookies::get_all_cookies(client, session_id).await?;
+    cookies::validate_state_cookies(&cookies)?;
 
     let origin_js = r#"(() => {
         const result = { origin: location.origin, localStorage: [], sessionStorage: [] };
@@ -473,6 +474,7 @@ pub async fn load_state(
     let state: StorageState =
         serde_json::from_str(&json_str).map_err(|e| format!("Invalid state file: {}", e))?;
 
+    cookies::validate_state_cookies(&state.cookies)?;
     if !state.cookies.is_empty() {
         let cookie_values: Vec<Value> = state
             .cookies
@@ -869,6 +871,8 @@ mod tests {
                 secure: false,
                 session: true,
                 same_site: Some("Lax".to_string()),
+                partition_key: None,
+                partition_key_opaque: None,
             }],
             origins: vec![OriginStorage {
                 origin: "https://example.com".to_string(),
@@ -1014,6 +1018,8 @@ mod tests {
             secure: true,
             session: false,
             same_site: Some("Strict".to_string()),
+            partition_key: None,
+            partition_key_opaque: None,
         };
 
         let json = serde_json::to_value(&cookie).unwrap();

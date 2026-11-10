@@ -3856,7 +3856,7 @@
         "openWorldHint": true,
         "readOnlyHint": false
       },
-      "description": "Load cookies and storage state. Origins whose page does not stay on the saved origin are skipped and listed in skippedOrigins.",
+      "description": "Load cookies and storage state, preserving cookie partition keys. Opaque cookie partitions cannot be persisted. Origins whose page does not stay on the saved origin are skipped and listed in skippedOrigins.",
       "inputSchema": {
         "properties": {
           "path": {
@@ -3914,7 +3914,7 @@
         "openWorldHint": true,
         "readOnlyHint": false
       },
-      "description": "Save cookies and storage state.",
+      "description": "Save cookies and storage state, preserving cookie partition keys. Opaque cookie partitions cannot be persisted.",
       "inputSchema": {
         "properties": {
           "path": {

@@ -1684,14 +1684,14 @@ fn parity_tools() -> Vec<Value> {
         tool(
             TOOL_STATE_SAVE,
             "State save",
-            "Save cookies and storage state.",
+            "Save cookies and storage state, preserving cookie partition keys. Opaque cookie partitions cannot be persisted.",
             json!({ "path": { "type": "string" } }),
             &["path"],
         ),
         tool(
             TOOL_STATE_LOAD,
             "State load",
-            "Load cookies and storage state. Origins whose page does not stay on the saved origin are skipped and listed in skippedOrigins.",
+            "Load cookies and storage state, preserving cookie partition keys. Opaque cookie partitions cannot be persisted. Origins whose page does not stay on the saved origin are skipped and listed in skippedOrigins.",
             json!({ "path": { "type": "string" } }),
             &["path"],
         ),
