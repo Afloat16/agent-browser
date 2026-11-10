@@ -40,6 +40,10 @@ pub fn validate_origin(origin: &str) -> Result<(), String> {
 }
 
 fn host_matches(host: &str, allowed: &str) -> bool {
+    let allowed = allowed
+        .strip_suffix('.')
+        .unwrap_or(allowed)
+        .to_ascii_lowercase();
     if allowed.parse::<std::net::IpAddr>().is_ok() {
         return host == allowed;
     }
@@ -79,7 +83,8 @@ impl HostPolicy {
     }
 
     pub fn allows_host(&self, host: &str) -> bool {
-        let host = host.to_ascii_lowercase();
+        // DNS names are case-insensitive and may include one terminal root dot.
+        let host = host.strip_suffix('.').unwrap_or(host).to_ascii_lowercase();
         self.base.iter().any(|a| host_matches(&host, a))
             && (self.narrowed.is_empty() || self.narrowed.iter().any(|a| host_matches(&host, a)))
     }
@@ -122,5 +127,44 @@ impl HostPolicy {
                 self.base.join(", ")
             }
         ))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn flow_hosts_accept_dns_root_dot_aliases() {
+        for start in ["https://example.com/", "https://example.com./"] {
+            let policy = HostPolicy::from_start(start);
+            for allowed in [
+                "https://example.com/",
+                "https://example.com./",
+                "https://api.example.com./items",
+            ] {
+                assert!(policy.check(allowed).is_ok(), "{start} -> {allowed}");
+            }
+            for denied in [
+                "https://example.com.evil.test./",
+                "https://notexample.com./",
+                "https://example.com../",
+            ] {
+                assert!(policy.check(denied).is_err(), "{denied}");
+            }
+        }
+    }
+
+    #[test]
+    fn narrowed_flow_hosts_use_dns_case_and_root_dot_rules() {
+        let flow = flow_of(json!({
+            "startUrl": "https://example.com/",
+            "allowedHosts": ["API.EXAMPLE.COM."]
+        }));
+        let policy = HostPolicy::of(&flow);
+        assert!(policy.check("https://api.example.com/items").is_ok());
+        assert!(policy.check("https://api.example.com./items").is_ok());
+        assert!(policy.check("https://example.com/").is_err());
+        assert!(policy.check("https://other.example.com/").is_err());
     }
 }
