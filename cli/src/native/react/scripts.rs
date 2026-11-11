@@ -54,18 +54,21 @@ pub const TREE_SNAPSHOT: &str = r#"
   const ri = (__abRiId != null && hook.rendererInterfaces && hook.rendererInterfaces.get) ? hook.rendererInterfaces.get(__abRiId) : null;
   if (!ri) throw new Error("No React renderer attached - the page has not booted React yet");
 
-  const batches = await new Promise((resolve) => {
+  const batches = await new Promise((resolve, reject) => {
     const out = [];
-    const origEmit = hook.emit;
-    hook.emit = function (event, payload) {
-      if (event === "operations") out.push(Array.from(payload));
-      return origEmit.apply(hook, arguments);
-    };
-    ri.flushInitialOperations();
-    setTimeout(() => {
-      hook.emit = origEmit;
-      resolve(out);
-    }, 50);
+    const unsubscribe = hook.sub("operations", (payload) => {
+      if (payload[0] === __abRiId) out.push(Array.from(payload));
+    });
+    try {
+      ri.flushInitialOperations();
+      setTimeout(() => {
+        unsubscribe();
+        resolve(out);
+      }, 50);
+    } catch (error) {
+      unsubscribe();
+      reject(error);
+    }
   });
 
   const nodes = batches.flatMap((ops) => {
@@ -204,7 +207,7 @@ pub const RENDERS_INIT: &str = r#"
 
   const MAX_COMPONENTS = 200;
   const data = {};
-  const fps = { frames: [], last: 0, rafId: 0 };
+  const fps = { count: 0, sum: 0, min: Infinity, max: 0, drops: 0, last: 0, rafId: 0 };
 
   window.__AB_RENDERS__ = data;
   window.__AB_RENDERS_FPS__ = fps;
@@ -212,7 +215,15 @@ pub const RENDERS_INIT: &str = r#"
   window.__AB_RENDERS_ACTIVE__ = true;
 
   function fpsLoop(now) {
-    if (fps.last > 0) fps.frames.push(now - fps.last);
+    if (fps.last > 0) {
+      const dt = now - fps.last;
+      const sample = dt > 0 ? 1000 / dt : 0;
+      fps.count++;
+      fps.sum += sample;
+      fps.min = Math.min(fps.min, sample);
+      fps.max = Math.max(fps.max, sample);
+      if (sample < 30) fps.drops++;
+    }
     fps.last = now;
     fps.rafId = requestAnimationFrame(fpsLoop);
   }
@@ -230,7 +241,12 @@ pub const RENDERS_INIT: &str = r#"
 
   function getName(fiber) {
     if (!fiber.type || typeof fiber.type === "string") return null;
-    return fiber.type.displayName || fiber.type.name || null;
+    const name = fiber.type.displayName || fiber.type.name;
+    if (name) return name;
+    if (fiber.tag === 11 && fiber.type.render) {
+      return fiber.type.render.displayName || fiber.type.render.name || null;
+    }
+    return null;
   }
 
   function brief(val) {
@@ -264,21 +280,33 @@ pub const RENDERS_INIT: &str = r#"
       }
     }
     if (fiber.memoizedState !== alt.memoizedState) {
-      let curr = fiber.memoizedState;
-      let prev = alt.memoizedState;
-      let hookIdx = 0;
-      while (curr || prev) {
-        if ((curr && curr.memoizedState) !== (prev && prev.memoizedState)) {
-          changes.push({
-            type: "state",
-            name: "hook #" + hookIdx,
-            prev: brief(prev && prev.memoizedState),
-            next: brief(curr && curr.memoizedState),
-          });
+      if (fiber.tag === 1) {
+        const curr = fiber.memoizedState || {};
+        const prev = alt.memoizedState || {};
+        const allKeys = new Set([...Object.keys(curr), ...Object.keys(prev)]);
+        for (const k of allKeys) {
+          if (!Object.is(curr[k], prev[k]) ||
+              Object.prototype.hasOwnProperty.call(curr, k) !== Object.prototype.hasOwnProperty.call(prev, k)) {
+            changes.push({ type: "state", name: k, prev: brief(prev[k]), next: brief(curr[k]) });
+          }
         }
-        curr = curr && curr.next;
-        prev = prev && prev.next;
-        hookIdx++;
+      } else {
+        let curr = fiber.memoizedState;
+        let prev = alt.memoizedState;
+        let hookIdx = 0;
+        while (curr || prev) {
+          if ((curr && curr.memoizedState) !== (prev && prev.memoizedState)) {
+            changes.push({
+              type: "state",
+              name: "hook #" + hookIdx,
+              prev: brief(prev && prev.memoizedState),
+              next: brief(curr && curr.memoizedState),
+            });
+          }
+          curr = curr && curr.next;
+          prev = prev && prev.next;
+          hookIdx++;
+        }
       }
     }
     if (fiber.dependencies && fiber.dependencies.firstContext) {
@@ -338,7 +366,15 @@ pub const RENDERS_INIT: &str = r#"
   }
 
   function walkFiber(fiber) {
-    if (!fiber) return;
+    const siblings = [];
+    while (fiber) {
+      recordFiber(fiber);
+      if (fiber.sibling) siblings.push(fiber.sibling);
+      fiber = fiber.child || siblings.pop();
+    }
+  }
+
+  function recordFiber(fiber) {
     const tag = fiber.tag;
     if (tag === 0 || tag === 1 || tag === 2 || tag === 11 || tag === 15) {
       const didRender =
@@ -355,15 +391,17 @@ pub const RENDERS_INIT: &str = r#"
             if (!data[name]) {
               data[name] = {
                 count: 0, mounts: 0, totalTime: 0, selfTime: 0,
-                domMutations: 0, changes: [], _instances: new Set(),
+                domMutations: 0, changes: [], _instances: new WeakSet(), _instanceCount: 0,
               };
             }
             data[name].count++;
             if (!fiber.alternate) data[name].mounts++;
-            if (!data[name]._instances.has(fiber)) {
-              data[name]._instances.add(fiber);
-              if (fiber.alternate) data[name]._instances.add(fiber.alternate);
+            if (!data[name]._instances.has(fiber) &&
+                !(fiber.alternate && data[name]._instances.has(fiber.alternate))) {
+              data[name]._instanceCount++;
             }
+            data[name]._instances.add(fiber);
+            if (fiber.alternate) data[name]._instances.add(fiber.alternate);
             if (typeof fiber.actualDuration === "number") {
               data[name].totalTime += fiber.actualDuration;
               data[name].selfTime += Math.max(0, fiber.actualDuration - childrenTime(fiber));
@@ -377,8 +415,6 @@ pub const RENDERS_INIT: &str = r#"
         }
       }
     }
-    walkFiber(fiber.child);
-    walkFiber(fiber.sibling);
   }
 })()
 "#;
@@ -397,14 +433,12 @@ pub const RENDERS_STOP: &str = r#"
   let fpsStats = { avg: 0, min: 0, max: 0, drops: 0 };
   if (fpsData) {
     cancelAnimationFrame(fpsData.rafId);
-    if (fpsData.frames.length > 0) {
-      const fpsSamples = fpsData.frames.map((dt) => (dt > 0 ? 1000 / dt : 0));
-      const sum = fpsSamples.reduce((a, b) => a + b, 0);
+    if (fpsData.count > 0) {
       fpsStats = {
-        avg: Math.round(sum / fpsSamples.length),
-        min: Math.round(Math.min(...fpsSamples)),
-        max: Math.round(Math.max(...fpsSamples)),
-        drops: fpsSamples.filter((f) => f < 30).length,
+        avg: Math.round(fpsData.sum / fpsData.count),
+        min: Math.round(fpsData.min),
+        max: Math.round(fpsData.max),
+        drops: fpsData.drops,
       };
     }
   }
@@ -443,7 +477,7 @@ pub const RENDERS_STOP: &str = r#"
         count: entry.count,
         mounts: entry.mounts,
         reRenders: entry.count - entry.mounts,
-        instanceCount: entry._instances.size,
+        instanceCount: entry._instanceCount,
         totalTime: round(entry.totalTime),
         selfTime: round(entry.selfTime),
         domMutations: entry.domMutations,
@@ -475,18 +509,21 @@ pub const SUSPENSE_WALK: &str = r#"
   const ri = (__abRiId != null && hook.rendererInterfaces && hook.rendererInterfaces.get) ? hook.rendererInterfaces.get(__abRiId) : null;
   if (!ri) throw new Error("No React renderer attached");
 
-  const batches = await new Promise((resolve) => {
+  const batches = await new Promise((resolve, reject) => {
     const out = [];
-    const origEmit = hook.emit;
-    hook.emit = function (event, payload) {
-      if (event === "operations") out.push(payload);
-      return origEmit.apply(this, arguments);
-    };
-    ri.flushInitialOperations();
-    setTimeout(() => {
-      hook.emit = origEmit;
-      resolve(out);
-    }, 50);
+    const unsubscribe = hook.sub("operations", (payload) => {
+      if (payload[0] === __abRiId) out.push(Array.from(payload));
+    });
+    try {
+      ri.flushInitialOperations();
+      setTimeout(() => {
+        unsubscribe();
+        resolve(out);
+      }, 50);
+    } catch (error) {
+      unsubscribe();
+      reject(error);
+    }
   });
 
   const boundaryMap = new Map();
@@ -673,6 +710,7 @@ pub const VITALS_INIT: &str = r#"
 
   const cwv = { lcp: null, cls: 0, clsEntries: [], fcp: null, inp: null };
   window.__AB_VITALS__ = cwv;
+  let clsWindowStart = null, clsWindowLast = null, clsWindowValue = 0;
 
   try {
     new PerformanceObserver((list) => {
@@ -693,7 +731,17 @@ pub const VITALS_INIT: &str = r#"
     new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (!entry.hadRecentInput) {
-          cwv.cls += entry.value;
+          // CLS is the largest shift window, with gaps below 1s and a span below 5s.
+          if (clsWindowStart !== null &&
+              entry.startTime - clsWindowLast < 1000 &&
+              entry.startTime - clsWindowStart < 5000) {
+            clsWindowValue += entry.value;
+          } else {
+            clsWindowStart = entry.startTime;
+            clsWindowValue = entry.value;
+          }
+          clsWindowLast = entry.startTime;
+          cwv.cls = Math.max(cwv.cls, clsWindowValue);
           cwv.clsEntries.push({
             value: Math.round(entry.value * 10000) / 10000,
             startTime: Math.round(entry.startTime * 100) / 100,
@@ -714,13 +762,34 @@ pub const VITALS_INIT: &str = r#"
   } catch {}
 
   try {
-    new PerformanceObserver((list) => {
-      let worst = cwv.inp || 0;
+    const longestInteractions = [];
+    let minInteractionId = Infinity, maxInteractionId = 0;
+    const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        if (entry.duration > worst) worst = entry.duration;
+        const id = entry.interactionId;
+        if (!id) continue;
+        minInteractionId = Math.min(minInteractionId, id);
+        maxInteractionId = Math.max(maxInteractionId, id);
+        const previous = longestInteractions.find((interaction) => interaction.id === id);
+        if (previous) {
+          previous.duration = Math.max(previous.duration, entry.duration);
+        } else if (longestInteractions.length < 10 ||
+                   entry.duration > longestInteractions[longestInteractions.length - 1].duration) {
+          longestInteractions.push({ id, duration: entry.duration });
+        }
+        longestInteractions.sort((a, b) => b.duration - a.duration);
+        if (longestInteractions.length > 10) longestInteractions.pop();
       }
-      if (worst > 0) cwv.inp = Math.round(worst * 100) / 100;
-    }).observe({ type: "event", buffered: true, durationThreshold: 40 });
+      if (longestInteractions.length > 0) {
+        // Match web-vitals' bounded p98 estimate and interaction-count fallback.
+        const count = performance.interactionCount ??
+          ((maxInteractionId - minInteractionId) / 7 + 1);
+        const index = Math.min(longestInteractions.length - 1, Math.floor(count / 50));
+        cwv.inp = Math.round(longestInteractions[index].duration * 100) / 100;
+      }
+    });
+    observer.observe({ type: "event", buffered: true, durationThreshold: 0 });
+    observer.observe({ type: "first-input", buffered: true });
   } catch {}
 
   // React profiling build emits console.timeStamp(label, start, end, track, trackGroup, color)
@@ -753,7 +822,7 @@ pub const VITALS_READ: &str = r#"
   const timing = window.__AB_REACT_TIMING__ || [];
   const nav = performance.getEntriesByType("navigation")[0];
   const ttfb = nav
-    ? Math.round((nav.responseStart - nav.requestStart) * 100) / 100
+    ? Math.round(Math.max(0, nav.responseStart - (nav.activationStart || 0)) * 100) / 100
     : null;
   return JSON.stringify({ cwv, timing, ttfb });
 })()
